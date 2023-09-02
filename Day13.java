@@ -28,24 +28,23 @@ public class ArmstrongNumber {
 }
 
 //method-2
-import java.util.Scanner;
-
 public class ArmstrongNumber {
 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 
-        int num,rem,arm=0,temp,digits;
-        System.out.print("Enter Number of digits : ");
-        digits = sc.nextInt();
+        int num,rem,arm=0,temp;
         System.out.print("Enter Number : ");
         num = sc.nextInt();
-        temp = num;
 
+        temp = num;
+        int len=digits(num);
+
+        //logic for armstrong
         while(temp != 0){
             rem = temp % 10;
-            arm = (int)Math.pow(rem, digits) + arm;
+            arm = (int)Math.pow(rem, len) + arm;
             temp = temp / 10;
         }
 
@@ -54,8 +53,15 @@ public class ArmstrongNumber {
         } else {
             System.out.println(num+" is not a armstrong");
         }
+    }
 
+    static int digits(int num){
+        int len = 0;
+        while (num != 0){
+            len ++;
+            num = num / 10;
+        }
+        return len;
     }
 
 }
-
