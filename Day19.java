@@ -29,6 +29,7 @@ public class PrimeFactors {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter Number : ");
         int n = sc.nextInt();
+        primeFactors(n);
     }
 
 }
